@@ -1,237 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WS Seguros | Proteção Completa para Você</title>
-  <meta name="description" content="WS Seguros oferece seguros veicular, residencial, vida e empresarial. Simule online, fale no WhatsApp e proteja o que importa." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WS Seguros | Plataforma Inteligente de Proteção</title>
+<meta name="description" content="Plataforma digital da WS Seguros. Simule, compare, solicite propostas e fale com especialistas em seguros.">
 
-  <style>
-    :root{
-      --azul:#0b4ea2;
-      --azul-claro:#1aa3d8;
-      --cinza:#f4f6f9;
-      --escuro:#0a3d80;
-    }
+<style>
+:root{
+  --azul:#0b4ea2;
+  --azul2:#1aa3d8;
+  --escuro:#0a3d80;
+  --cinza:#f4f6f9;
+}
 
-    *{box-sizing:border-box;scroll-behavior:smooth;}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--cinza);color:#333}
 
-    body{
-      margin:0;
-      font-family:'Segoe UI', Arial, sans-serif;
-      background:var(--cinza);
-      color:#333;
-    }
+header{
+  background:linear-gradient(135deg,var(--azul),var(--azul2));
+  color:#fff;padding:90px 20px;text-align:center
+}
+header h1{font-size:3.4rem;margin:0}
+header p{font-size:1.4rem;max-width:900px;margin:20px auto}
 
-    header{
-      background:linear-gradient(135deg,var(--azul),var(--azul-claro));
-      color:#fff;
-      padding:80px 20px;
-      text-align:center;
-      animation:fadeDown 1s ease;
-    }
+nav{background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 3px 10px rgba(0,0,0,.1)}
+nav ul{display:flex;justify-content:center;gap:30px;list-style:none;padding:18px;margin:0;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--azul);font-weight:600}
 
-    @keyframes fadeDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
+section{max-width:1250px;margin:auto;padding:90px 20px}
+section h2{text-align:center;font-size:2.6rem;color:var(--azul);margin-bottom:25px}
+section p.intro{text-align:center;max-width:900px;margin:0 auto 50px;font-size:1.15rem}
 
-    header img{max-width:190px;margin-bottom:25px;}
-    header h1{font-size:3.2rem;margin:10px 0;}
-    header p{font-size:1.35rem;max-width:850px;margin:auto;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.card{background:#fff;border-radius:18px;padding:35px;box-shadow:0 10px 25px rgba(0,0,0,.08);transition:.4s}
+.card:hover{transform:translateY(-10px)}
+.card h3{color:var(--azul)}
 
-    nav{
-      background:#fff;
-      box-shadow:0 2px 10px rgba(0,0,0,.1);
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px}
+.timeline div{background:#fff;border-left:6px solid var(--azul);padding:25px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      justify-content:center;
-      gap:30px;
-      padding:18px;
-      margin:0;
-      flex-wrap:wrap;
-    }
+.simulador{background:#fff;border-radius:25px;padding:45px;box-shadow:0 12px 30px rgba(0,0,0,.12);max-width:800px;margin:auto}
+label{display:block;margin-top:15px;font-weight:600}
+input,select{width:100%;padding:14px;margin-top:6px;border-radius:10px;border:1px solid #ccc}
+button{margin-top:30px;width:100%;padding:16px;border:none;border-radius:40px;background:var(--azul);color:#fff;font-size:1.1rem;cursor:pointer}
+button:hover{background:var(--escuro)}
+.resultado{text-align:center;font-size:1.3rem;font-weight:bold;color:var(--azul);margin-top:25px}
 
-    nav a{color:var(--azul);text-decoration:none;font-weight:600;}
+.dashboard{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
+.stat{background:#fff;border-radius:18px;padding:30px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.stat span{font-size:2.6rem;color:var(--azul);font-weight:bold}
 
-    section{max-width:1200px;margin:auto;padding:80px 20px;}
+.faq details{background:#fff;padding:22px;border-radius:14px;margin-bottom:15px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
 
-    h2{color:var(--azul);font-size:2.4rem;margin-bottom:25px;text-align:center;}
+.cta{background:linear-gradient(135deg,var(--azul),var(--azul2));color:#fff;text-align:center;padding:100px 20px}
+.cta a{background:#fff;color:var(--azul);padding:20px 50px;border-radius:50px;text-decoration:none;font-weight:bold;font-size:1.2rem}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-    }
+footer{background:var(--escuro);color:#fff;text-align:center;padding:50px 20px}
 
-    .card{
-      background:#fff;
-      border-radius:18px;
-      padding:35px;
-      box-shadow:0 8px 22px rgba(0,0,0,.08);
-      transition:.4s;
-    }
-
-    .card:hover{transform:translateY(-10px);}
-
-    .card h3{color:var(--azul);margin-top:0;}
-
-    .simulador{
-      background:#fff;
-      border-radius:25px;
-      padding:45px;
-      box-shadow:0 10px 30px rgba(0,0,0,.12);
-      max-width:750px;
-      margin:auto;
-      animation:fadeUp 1s ease;
-    }
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
-
-    label{font-weight:600;margin-top:15px;display:block;}
-    select,input{
-      width:100%;padding:14px;margin-top:6px;border-radius:10px;border:1px solid #ccc;
-    }
-
-    button{
-      margin-top:30px;width:100%;padding:16px;border:none;
-      background:var(--azul);color:#fff;font-size:1.1rem;
-      border-radius:40px;cursor:pointer;transition:.3s;
-    }
-
-    button:hover{background:var(--escuro);}
-
-    .resultado{margin-top:25px;font-size:1.25rem;font-weight:bold;color:var(--azul);text-align:center;}
-
-    .faq details{
-      background:#fff;padding:22px;border-radius:14px;margin-bottom:18px;
-      box-shadow:0 4px 14px rgba(0,0,0,.08);
-    }
-
-    .cta{
-      background:linear-gradient(135deg,var(--azul),var(--azul-claro));
-      color:#fff;text-align:center;padding:90px 20px;
-    }
-
-    .cta a{
-      background:#fff;color:var(--azul);padding:18px 45px;border-radius:45px;
-      text-decoration:none;font-size:1.2rem;font-weight:bold;display:inline-block;margin-top:25px;
-    }
-
-    footer{background:var(--escuro);color:#fff;text-align:center;padding:45px 20px;}
-
-    /* WhatsApp */
-    .whatsapp{
-      position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;
-      padding:16px 20px;border-radius:50px;text-decoration:none;font-weight:bold;
-      box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:2000;
-    }
-  </style>
+.whatsapp{position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;padding:16px 22px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 6px 20px rgba(0,0,0,.3);z-index:2000}
+</style>
 </head>
 <body>
 
 <header>
-  <img src="ws.jfif" alt="WS Seguros">
-  <h1>WS Seguros</h1>
-  <p>Mais do que seguros, oferecemos tranquilidade, proteção e confiança para cada fase da sua vida.</p>
+<h1>WS Seguros</h1>
+<p>Uma plataforma inteligente para proteger seu patrimônio, sua família e o seu futuro.</p>
 </header>
 
 <nav>
-  <ul>
-    <li><a href="#seguros">Seguros</a></li>
-    <li><a href="#simulador">Simulador</a></li>
-    <li><a href="#beneficios">Vantagens</a></li>
-    <li><a href="#faq">Dúvidas</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ul>
+<ul>
+<li><a href="#seguros">Seguros</a></li>
+<li><a href="#como">Como funciona</a></li>
+<li><a href="#simulador">Simulador</a></li>
+<li><a href="#dados">Números</a></li>
+<li><a href="#faq">FAQ</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
 </nav>
 
 <section id="seguros">
-  <h2>Proteções que se adaptam à sua realidade</h2>
-  <div class="cards">
-    <div class="card"><h3>Seguro Veicular</h3><p>Proteja seu veículo contra colisões, roubo, incêndio e tenha assistência 24h em qualquer lugar.</p></div>
-    <div class="card"><h3>Seguro Residencial</h3><p>Segurança para sua casa, apartamento ou imóvel alugado, protegendo seu patrimônio.</p></div>
-    <div class="card"><h3>Seguro de Vida</h3><p>Garanta estabilidade financeira para quem você ama, mesmo nos momentos mais difíceis.</p></div>
-    <div class="card"><h3>Seguro Empresarial</h3><p>Proteção completa para o seu negócio continuar crescendo sem imprevistos.</p></div>
-  </div>
+<h2>Soluções completas de proteção</h2>
+<p class="intro">Cada cliente tem uma necessidade diferente. Por isso, a WS Seguros oferece soluções personalizadas.</p>
+<div class="cards">
+<div class="card"><h3>Seguro Veicular</h3><p>Cobertura total, assistência 24h e tranquilidade no dia a dia.</p></div>
+<div class="card"><h3>Seguro Residencial</h3><p>Proteção contra danos, roubos, incêndios e imprevistos.</p></div>
+<div class="card"><h3>Seguro de Vida</h3><p>Garantia financeira para quem você ama.</p></div>
+<div class="card"><h3>Seguro Empresarial</h3><p>Blindagem completa para seu negócio crescer com segurança.</p></div>
+</div>
+</section>
+
+<section id="como">
+<h2>Como funciona contratar um seguro</h2>
+<div class="timeline">
+<div><h3>1. Simulação</h3><p>Você informa seus dados e necessidades.</p></div>
+<div><h3>2. Análise</h3><p>Nossos especialistas analisam o melhor plano.</p></div>
+<div><h3>3. Proposta</h3><p>Enviamos opções personalizadas.</p></div>
+<div><h3>4. Proteção ativa</h3><p>Você fica protegido e tranquilo.</p></div>
+</div>
 </section>
 
 <section id="simulador">
-  <h2>Simule agora e descubra como é acessível se proteger</h2>
-  <div class="simulador">
-    <label>Tipo de seguro</label>
-    <select id="tipo">
-      <option value="veiculo">Veicular</option>
-      <option value="residencia">Residencial</option>
-      <option value="vida">Vida</option>
-    </select>
-
-    <label>Valor aproximado do bem (R$)</label>
-    <input type="number" id="valor" placeholder="Ex: 60000">
-
-    <label>Perfil</label>
-    <select id="perfil">
-      <option value="baixo">Baixo risco</option>
-      <option value="medio">Risco médio</option>
-      <option value="alto">Alto risco</option>
-    </select>
-
-    <button onclick="simular()">Calcular estimativa</button>
-    <div class="resultado" id="resultado"></div>
-  </div>
+<h2>Simulador Inteligente</h2>
+<div class="simulador">
+<label>Tipo de seguro</label>
+<select id="tipo"><option value="veiculo">Veicular</option><option value="residencia">Residencial</option><option value="vida">Vida</option></select>
+<label>Valor do bem (R$)</label>
+<input type="number" id="valor" placeholder="Ex: 80000">
+<label>Perfil de risco</label>
+<select id="perfil"><option value="baixo">Baixo</option><option value="medio">Médio</option><option value="alto">Alto</option></select>
+<button onclick="simular()">Gerar estimativa</button>
+<div class="resultado" id="resultado"></div>
+</div>
 </section>
 
-<section id="beneficios">
-  <h2>Por que milhares escolhem a WS Seguros?</h2>
-  <div class="cards">
-    <div class="card"><h3>Confiança</h3><p>Atuamos com ética, transparência e compromisso real com o cliente.</p></div>
-    <div class="card"><h3>Atendimento humano</h3><p>Você fala com pessoas, não robôs.</p></div>
-    <div class="card"><h3>Soluções personalizadas</h3><p>Cada seguro é pensado para sua realidade.</p></div>
-  </div>
+<section id="dados">
+<h2>WS Seguros em números</h2>
+<div class="dashboard">
+<div class="stat"><span>+5.000</span><p>Clientes protegidos</p></div>
+<div class="stat"><span>98%</span><p>Satisfação</p></div>
+<div class="stat"><span>24h</span><p>Atendimento</p></div>
+<div class="stat"><span>100%</span><p>Transparência</p></div>
+</div>
 </section>
 
-<section id="faq" class="faq">
-  <h2>Dúvidas Frequentes</h2>
-  <details><summary>Seguro é caro?</summary><p>Na maioria dos casos, custa menos do que você imagina.</p></details>
-  <details><summary>Posso contratar tudo online?</summary><p>Sim, ou falar diretamente com um consultor.</p></details>
-  <details><summary>Quando posso acionar?</summary><p>Assim que o contrato estiver ativo.</p></details>
+<section id="faq">
+<h2>Dúvidas Frequentes</h2>
+<div class="faq">
+<details><summary>Seguro vale a pena?</summary><p>Sim. Um pequeno valor mensal pode evitar grandes prejuízos.</p></details>
+<details><summary>Posso personalizar meu plano?</summary><p>Totalmente. Cada seguro é feito sob medida.</p></details>
+<details><summary>Como contratar?</summary><p>Online ou diretamente com um especialista.</p></details>
+</div>
 </section>
 
 <section class="cta" id="contato">
-  <h2>Não espere o imprevisto acontecer</h2>
-  <p>Fale agora com um especialista e proteja o que é mais importante para você.</p>
-  <a href="tel:4933661497">📞 (49) 3366-1497</a>
+<h2>Proteja hoje o que levou anos para conquistar</h2>
+<p>Fale agora com um especialista WS Seguros.</p>
+<a href="tel:4933661497">📞 (49) 3366-1497</a>
 </section>
 
 <footer>
-  <p>© 2025 WS Seguros • Segurança que acompanha você</p>
+<p>© 2025 WS Seguros • Plataforma Digital de Proteção</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/554933661497" target="_blank">💬 WhatsApp</a>
 
 <script>
-  function simular(){
-    const tipo=document.getElementById('tipo').value;
-    const valor=parseFloat(document.getElementById('valor').value);
-    const perfil=document.getElementById('perfil').value;
-
-    if(!valor || valor<=0){
-      document.getElementById('resultado').innerText='Informe um valor válido.';
-      return;
-    }
-
-    let taxaBase = tipo==='vida'?0.02:tipo==='residencia'?0.015:0.03;
-    let fator = perfil==='alto'?1.3:perfil==='medio'?1.15:1;
-
-    const estimativa = (valor * taxaBase * fator).toFixed(2);
-
-    document.getElementById('resultado').innerText = `Estimativa mensal aproximada: R$ ${estimativa}`;
-  }
+function simular(){
+const tipo=document.getElementById('tipo').value;
+const valor=parseFloat(document.getElementById('valor').value);
+const perfil=document.getElementById('perfil').value;
+if(!valor||valor<=0){document.getElementById('resultado').innerText='Informe um valor válido';return}
+let base=tipo==='vida'?0.02:tipo==='residencia'?0.015:0.03;
+let fator=perfil==='alto'?1.3:perfil==='medio'?1.15:1;
+document.getElementById('resultado').innerText=`Estimativa mensal: R$ ${(valor*base*fator).toFixed(2)}`;
+}
 </script>
 
 </body>
 </html>
-
